@@ -2,10 +2,15 @@
 
 ## [Unreleased]
 
+### Added (commit 5)
+
+- Added a new endpoint, `/jobs/:job_id/pay`, which allows users to pay for a job.
+
 ### Added (commit 4)
 
 - Added a new endpoint, `/jobs/unpaid`, which returns a list of active jobs(`in_progress`)
 - Fixed lint (sorry about that, the commit will be difficult or unpleasant to review due to the presence of linting errors)
+
 
 ### Added (commit 3)
 
