@@ -18,13 +18,35 @@ const contractRepository = (contractModelDB) => {
           { ContractorId: profileId },
         ]
       }
-    })
+    });
 
-    return contract
+    return contract;
+  }
+
+
+  /**
+   * Finds contracts in the database by profile ID.
+   *
+   * @param {number} profileId - The ID of the profile associated with the contract.
+   * @returns {Promise<Array<Contract>>} A promise that resolves with the found contracts, or `[]` if no matching contract was found.
+   */
+  const findActiveContractsByProfile = async (profileId) => {
+    const contracts = await contractModelDB.findAll({
+      where: {
+        [Op.or]: [
+          { ClientId: profileId },
+          { ContractorId: profileId },
+        ],
+        [Op.not]: { status: 'terminated' },
+      }
+    });
+
+    return contracts;
   }
 
   return {
-    findContract
+    findActiveContractsByProfile,
+    findContract,
   }
 }
 

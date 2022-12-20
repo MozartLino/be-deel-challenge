@@ -10,5 +10,6 @@ const auth = authWrapper(dependencies.profileRepository);
 
 const router = new Router();
 router.get('/contracts/:id', auth, contractController.getContract);
+router.get('/contracts', auth, contractController.getContracts);
 
 module.exports = router;

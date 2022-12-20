@@ -9,6 +9,7 @@ module.exports = {
     end: jest.fn(),
   },
   contractRepository: {
-    findContract: jest.fn()
+    findContract: jest.fn(),
+    findActiveContractsByProfile: jest.fn(),
   }
 }
