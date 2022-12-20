@@ -1,12 +1,10 @@
 const contractController = (contractRepository) => {
-  /**
-   * FIX ME!
-   * @returns contract by id
-   */
-  const getContract = async (req, res) => {
-    const { id } = req.params;
 
-    const contract = await contractRepository.findOne(id);
+  const getContract = async (req, res) => {
+    const { id: contractId } = req.params;
+    const { id: profileId } = req.profile;
+
+    const contract = await contractRepository.findContract(contractId, profileId);
 
     if (!contract) {
       return res.status(404).end();

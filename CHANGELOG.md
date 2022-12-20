@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Fixed (commit 2)
+
+- Fixed an issue where the user was able to see contracts that did not belong to them. The code has been modified to ensure that the user can only view their own contracts.
+
+
 ### Refactoring (commit 1)
 
 - Added tests to cover all the code.

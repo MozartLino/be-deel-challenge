@@ -9,6 +9,6 @@ module.exports = {
     end: jest.fn(),
   },
   contractRepository: {
-    findOne: jest.fn()
+    findContract: jest.fn()
   }
 }

@@ -6,6 +6,6 @@ describe('Repositories', () => {
   });
 
   it('should create a contractRepository', () => {
-    expect(repositories.contractRepository.findOne).toBeInstanceOf(Function);
+    expect(repositories.contractRepository.findContract).toBeInstanceOf(Function);
   });
 });
