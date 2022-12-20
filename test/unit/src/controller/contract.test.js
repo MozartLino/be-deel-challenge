@@ -42,13 +42,13 @@ describe('contractController', () => {
   it('should return a list of contract if it exists when calling getContracts', async () => {
     // GIVEN
     const profileId = '321'
-    contractRepository.findActiveContractsByProfile.mockResolvedValue([{ id: '123' }])
+    contractRepository.findNonTerminatedContractsByProfile.mockResolvedValue([{ id: '123' }])
 
     // WHEN
     await controller.getContracts({ profile: { id: profileId } }, res)
 
     // THEN
-    expect(contractRepository.findActiveContractsByProfile).toHaveBeenCalledWith(profileId)
+    expect(contractRepository.findNonTerminatedContractsByProfile).toHaveBeenCalledWith(profileId)
     expect(res.json).toHaveBeenCalledWith([{ id: '123' }])
   })
 
@@ -64,7 +64,7 @@ describe('contractController', () => {
     await controller.getContracts({ profile: { id: '321' } }, res)
 
     // THEN
-    expect(contractRepository.findActiveContractsByProfile).toHaveBeenCalledWith('321')
+    expect(contractRepository.findNonTerminatedContractsByProfile).toHaveBeenCalledWith('321')
     expect(res.status).toHaveBeenCalledWith(404)
     expect(res.end).toHaveBeenCalled()
   })

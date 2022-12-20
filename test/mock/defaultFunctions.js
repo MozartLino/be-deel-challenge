@@ -10,6 +10,6 @@ module.exports = {
   },
   contractRepository: {
     findContract: jest.fn(),
-    findActiveContractsByProfile: jest.fn(),
+    findNonTerminatedContractsByProfile: jest.fn(),
   }
 }

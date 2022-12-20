@@ -1,18 +1,17 @@
 const profileRepository = (profileModelDB) => {
-
   const findOne = async (id) => {
     const profile = await profileModelDB.findOne({
       where: {
-        id
-      }
-    })
+        id,
+      },
+    });
 
-    return profile
-  }
+    return profile;
+  };
 
   return {
-    findOne
-  }
-}
+    findOne,
+  };
+};
 
-module.exports = profileRepository
+module.exports = profileRepository;

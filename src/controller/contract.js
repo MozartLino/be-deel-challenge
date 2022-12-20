@@ -19,9 +19,8 @@ const contractController = (contractRepository) => {
 
   const getContracts = async (req, res) => {
     const { id: profileId } = req.profile;
-    const contracts = await contractRepository.findActiveContractsByProfile(
-      profileId
-    );
+    const contracts =
+      await contractRepository.findNonTerminatedContractsByProfile(profileId);
 
     if (isEmptyArray(contracts)) {
       return res.status(404).end();

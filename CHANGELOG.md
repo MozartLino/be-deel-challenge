@@ -2,7 +2,12 @@
 
 ## [Unreleased]
 
-### Fixed (commit 3)
+### Added (commit 4)
+
+- Added a new endpoint, `/jobs/unpaid`, which returns a list of active jobs(`in_progress`)
+- Fixed lint (sorry about that, the commit will be difficult or unpleasant to review due to the presence of linting errors)
+
+### Added (commit 3)
 
 - Added a new endpoint, `/contracts`, which returns a list of contracts belonging to a user (client or contractor).
 - The list should only contain non-terminated contracts.
